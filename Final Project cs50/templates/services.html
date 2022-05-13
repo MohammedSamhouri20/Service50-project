@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+{% block title %}
+My Ads
+{% endblock %}
+
+{% block body %}
+<div class="column">
+      <a href="/add">
+            <div class="card" style="background-color: rgba(255, 255, 255, 0.123);">
+                  <div class="container">
+                        <h2 style="text-align: center; color:black; margin-top:50%; ">Add ad</h2>
+                  </div>
+            </div>
+      </a>
+</div>
+   {% if service %}
+       {%for ser in service%}
+      <div class="column">
+      <a href="/ads/{{ser['service_id']}}/2">
+            <div class="card">
+                  <div class="container">
+                        <h2 style="text-align: center;">{{ser['name']}}</h2>
+<pre class="serv">
+Category: {{ser["category"]}}
+Price: ${{ser["price"]}}
+Ad Date: {{ser["date"]}}
+Contact: {{ser["contact"]}}
+</pre>
+                  </div>
+            </div>
+      </a>
+      <ul class="ul1" style="margin-left:25%; margin-bottom:50px;">
+          <li class="li1" ><a href="/ads/edit/{{ser['service_id']}}">Edit</a></li>
+          <li class="li1"><a href="/ads/remove/{{ser['service_id']}}">Remove</a></li>
+      </ul>
+
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}

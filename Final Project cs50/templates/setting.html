@@ -1,0 +1,44 @@
+{% extends "layout.html"%}
+{% block title %}
+{% if var == 'password' %}
+Change Password
+{% elif var == 'username' %}
+Change Username
+{% elif var == 'delete' %}
+Delete Account
+{% endif %}
+{% endblock %}
+
+{% block body %}
+
+
+         {% if var == 'password' %}
+       <form class="form1" action="/settings/password" method="POST">
+           <h1>Change Password</h1>
+           <input autocomplete="off" autofocus class ="input" type="password"  name="opass" placeholder="Old Password">
+           <br>
+           <input autocomplete="off" autofocus class ="input" type="password"  name="newpass" placeholder="New Password">
+           <br>
+           <input autocomplete="off" autofocus class ="input" type="password"  name="renewpass" placeholder="Re-New Password">
+           <br>
+           <input class ="input input1" type="submit" value="Change">
+       </form>
+         {% elif var == 'username' %}
+        <form class="form1" action="/settings/username" method="POST">
+           <h1>Change Username</h1>
+           <input autocomplete="off" autofocus class ="input" type="text"  name="ouser" placeholder="Old Username">
+           <br>
+           <input autocomplete="off" autofocus class ="input" type="text"  name="newuser" placeholder="New Username">
+           <br>
+           <input autocomplete="off" autofocus class ="input" type="password"  name="pass" placeholder="Password">
+           <br>
+           <input class ="input input1" type="submit" value="Change">
+       </form>
+         {% elif var == 'delete' %}
+      <form class="form1" action="/settings/delete" method="POST">
+           <h2 style="text-align:center; font-family: cursive;">Are you sure to permanently delete your account?</h2>
+           <input class ="input input1" type="submit" name="yes" value="Yes">
+           <input class ="input input1" type="submit" name="no" value="No">
+       </form>
+         {% endif %}
+{% endblock %}

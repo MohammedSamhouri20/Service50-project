@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+{% block title %}
+pages
+{% endblock %}
+
+{% block body %}
+        {% for p in page %}
+            <article class="form2">
+              {% if num1 == 1 %}
+                    <ul class="ul1">
+                       <li class="li1 li2" style="margin: 10px;"><a href="/favorite/remove/{{p['service_id']}}">Remove</a></li>
+                    </ul>
+              {% elif num1 == 2%}
+               <ul class="ul1">
+                       <li class="li1 li2" style="margin: 10px 5px;"><a href="/ads/edit/{{p['service_id']}}">Edit</a></li>
+                       <li class="li1 li2" style="margin: 10px 5px;"><a href="/ads/remove/{{p['service_id']}}">Remove</a></li>
+                    </ul>
+               {% else %}
+               <ul class="ul1">
+                       <li class="li1 li2" style="margin: 10px;"><a href="/favorite/add/{{p['service_id']}}">Add to favorites</a></li>
+                    </ul>
+              {% endif %}
+
+          <h1>{{ p['name'] }}</h1>
+
+            <p  style="word-wrap: break-word;">{{ p['desc'] }}</p>
+            <br>
+            <br>
+            <br>
+
+            <b style="font-size:large; margin-left: 5%;">Price:</b> ${{ p['price'] }}<br>
+            <b style="font-size:large; margin-left: 5%;">Category:</b> {{ p['category'] }}<br>
+            <b style="font-size:large; margin-left: 5%;">Contact:</b> {{ p['contact'] }}<br>
+            <b style="font-size:large; margin-left: 5%;">AD's Date:</b> {{ p['date'] }}<br>
+            <br><br>
+
+            {% endfor %}
+
+      </article>
+{% endblock %}

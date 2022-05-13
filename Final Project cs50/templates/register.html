@@ -1,0 +1,19 @@
+{% extends "layout.html"%}
+{% block title %}
+Register
+{% endblock %}
+
+{% block body %}
+       <form class="form1" action="/register" method="post">
+           <h1>Welcome to service50</h1>
+           <input autocomplete="off" autofocus class="input" type="text" title="Letters, numbers and _ only" name="username" placeholder="Username">
+           <br>
+           <input autocomplete="off" autofocus class="input" type="password" title="Letters and numbers only" name="pass" placeholder="Password">
+           <br>
+           <input autocomplete="off" autofocus class="input" type="password" name="repass" placeholder="Re-Password">
+           <br>
+           <input class ="input input1" type="submit" value="Sign Up">
+       </form>
+
+
+{% endblock %}

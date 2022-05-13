@@ -1,0 +1,22 @@
+{% extends "layout.html"%}
+{% block title %}
+Add
+{% endblock %}
+
+{% block body %}
+
+     <form class="form2" style="margin-left: 10%; margin-right: 10%;" action="/add" method="POST">
+         <h1>Add new ad</h1>
+           <input autocomplete="off" autofocus class ="in in1" style="margin-left: 11%;" type="text" name="title" placeholder="Title">
+           <input autocomplete="off" autofocus class ="in in1" style="margin-left: 12%;" type="text" name="category" placeholder="Category">
+           <br>
+           <br>
+           <input autocomplete="off" autofocus class ="in in1" style="margin-left: 11%;" type="text" name="price" placeholder="Price">
+           <input autocomplete="off" autofocus class ="in in1" style="margin-left: 12%;" type="text" name="contact" placeholder="Contact">
+           <br>
+           <br>
+           <textarea class ="in in1" style="margin-left: 10%; width: 78%; height: 275px;" name="description" placeholder="Description"></textarea>
+           <br>
+           <input class ="in in1" style="margin-left: 35.5%;" type="submit" value="Submit">
+       </form>
+{% endblock %}

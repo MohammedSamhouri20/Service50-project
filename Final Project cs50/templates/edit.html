@@ -1,0 +1,23 @@
+{% extends "layout.html"%}
+{% block title %}
+Edit
+{% endblock %}
+
+{% block body %}
+{% for ser in service %}
+     <form class="form2" style="margin-left: 10%; margin-right: 10%;" action="/edit/{{ser['service_id']}}" method="POST">
+         <h1>Edit</h1>
+           <input autocomplete="off" autofocus class ="in in1" style="margin-left: 11%;" value="{{ser['name']}}" type="text" name="title" placeholder="Title">
+           <input autocomplete="off" autofocus class ="in in1" style="margin-left: 12%;" value="{{ser['category']}}" type="text" name="category" placeholder="Category">
+           <br>
+           <br>
+           <input autocomplete="off" autofocus class ="in in1" style="margin-left: 11%;" value="{{ser['price']}}" type="text" name="price" placeholder="Price">
+           <input autocomplete="off" autofocus class ="in in1" style="margin-left: 12%;" value="{{ser['contact']}}" type="text" name="contact" placeholder="Contact">
+           <br>
+           <br>
+           <textarea class ="in in1" style="margin-left: 10%; width: 78%; height: 275px;" name="description" placeholder="Description">{{ser['desc']}}</textarea>
+           <br>
+           <input class ="in in1" style="margin-left: 35.5%;" type="submit" value="Submit">
+       </form>
+{%endfor%}
+{% endblock %}

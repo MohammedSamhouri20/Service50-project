@@ -1,0 +1,24 @@
+{% extends "layout.html"%}
+{% block title %}
+About
+{% endblock %}
+
+{% block body%}
+      <article class="form2">
+          <img style="width:100%; height:350px; border-radius:20px;" src="{{ url_for('static', filename='Service501.png') }}">
+          <p>
+            <b>About website:</b><br>
+            This is the final project for CS50x, it's a website for services/products.
+            if you have product you want to sell or service you want to present to people
+            for a fee, then this website is made for that. <br>
+            If there is someone interested in your service/product, he can contact with
+            you and agreement with each other.<br>
+            Thank you!!!
+            <br><br>
+            <b>About me:</b><br>
+            Name: Mohammed Al-samhouri.<br>
+            City/Country: Amman/Jordan.<br>
+            Email: Mohammed7842@gmail.com<br><br>
+        </p>
+      </article>
+{% endblock %}

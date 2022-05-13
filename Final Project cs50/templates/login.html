@@ -1,0 +1,26 @@
+{% extends "layout.html"%}
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+     {% if username %}
+       <form class="form1" action="/login" method="POST">
+           <h1>Welcome {{username}}! Please Log In</h1>
+           <input autocomplete="off" autofocus class ="input" type="text"  name="username" placeholder="Username">
+           <br>
+           <input autocomplete="off" autofocus class ="input" type="password"  name="pass" placeholder="Password">
+           <br>
+           <input class ="input input1" type="submit" value="Log In">
+       </form>
+     {% else %}
+       <form class="form1" action="/login" method="POST">
+           <h1>Welcome to service50</h1>
+           <input autocomplete="off" autofocus class ="input" type="text"  name="username" placeholder="Username">
+           <br>
+           <input autocomplete="off" autofocus class ="input" type="password"  name="pass" placeholder="Password">
+           <br>
+           <input class ="input input1" type="submit" value="Log In">
+       </form>
+     {% endif %}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html"%}
+{% block title %}
+My Favorites
+{% endblock %}
+
+{% block body %}
+
+{% if not favorite %}
+   <h1 class="form2">No Content Yet!!</h1>
+{% else %}
+    {% for fav in favorite %}
+<div class="column">
+      <a href="/favorites/{{fav['service_id']}}/1">
+            <div class="card">
+                  <div class="container">
+                        <h2 style="text-align: center;">{{fav['name']}}</h2>
+<pre class="serv">
+Category: {{fav["category"]}}
+Price: ${{fav["price"]}}
+Ad Date: {{fav["date"]}}
+Contact: {{fav["contact"]}}
+</pre>
+                  </div>
+            </div>
+      </a>
+
+    <ul class="ul1" style="margin-left:37%; margin-bottom:50px;">
+          <li class="li1"><a href="/favorite/remove/{{fav['service_id']}}">Remove</a></li>
+      </ul>
+
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}

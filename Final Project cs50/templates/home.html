@@ -1,0 +1,28 @@
+{% extends "layout.html"%}
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+      {%if not service%}
+      <h1 class="form2">No Content Yet!!</h1>
+      {%else%}
+      {%for ser in service%}
+      <div class="column">
+      <a href="/home/{{ser['service_id']}}">
+            <div class="card">
+                  <div class="container">
+                        <h2 style="text-align: center;">{{ser["name"]}}</h2>
+<pre class="serv">
+Category: {{ser["category"]}}
+Price: ${{ser["price"]}}
+Ad Date: {{ser["date"]}}
+Contact: {{ser["contact"]}}</pre>
+                  </div>
+            </div>
+      </a>
+</div>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

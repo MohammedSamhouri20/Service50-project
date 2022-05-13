@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title%}
+            {% endblock%}
+        </title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='Service50.png') }}">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <ul class="ul1">
+
+            <li class="li1"><a href="/">Home</a></li>
+            {% if session['user_id'] %}
+            <li class="li1"><a href="/favorites">My favorites</a></li>
+            <li class="li1"><a href="/ads">My Ads</a></li>
+            <li class="li1"><a href="/about">About us</a></li>
+            <li class="li2 li1"><a href="/logout">Logout</a></li>
+            <li class="li2 li1"><a href="/account">Account settings</a></li>
+            {% else %}
+            <li class="li1"><a href="/login">Log in</a></li>
+            <li class="li1"><a href="/register">Register</a></li>
+            <li class="li1"><a href="/about">About us</a></li>
+            {% endif %}
+          </ul>
+          {% block body%}
+          {% endblock %}
+          <br><br>
+    </body>
+    <footer>
+        <hr>
+        <b><pre>Service50-Website.   Amman-Jordan.   2020</pre> </b>
+    </footer>
+
+</html>
